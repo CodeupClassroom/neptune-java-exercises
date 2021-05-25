@@ -185,12 +185,6 @@ public class ControlFlow {
                 System.out.println(i + " cans of Big Red,");
                 System.out.println("Take one down, pass it around, ");
             }
-
-
-
         }
-
-
-
     }
 }
