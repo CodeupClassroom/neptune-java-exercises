@@ -169,21 +169,27 @@ public class ControlFlow {
 
         for (int i = 99; i >= 0; i--) {
             String word = "cans";
+            String phrase = " of Big Red on the Wall";
+            String shortPhrase = " of Big Red";
+            String chorusEnd = "Take one down, pass it around, ";
+            String period = ".";
+            String comma = ",";
             if (i ==1) {
-                System.out.println(i + " can of Big Red on the Wall.");
-                System.out.println(i + " can of Big Red on the Wall,");
-                System.out.println(i + " can of Big Red,");
-                System.out.println("Take one down, pass it around, ");
+                word = "can";
+                System.out.println(i + word + phrase + period);
+                System.out.println(i + word + phrase + comma);
+                System.out.println(i + shortPhrase + comma);
+                System.out.println(chorusEnd);
             } else if (i == 0 ){
-                System.out.println("No more cans of Big Red on the Wall,");
-                System.out.println("No more cans of Big Red,");
+                System.out.println("No more " + word + phrase + period);
+                System.out.println("No more " + word + shortPhrase + comma);
                 System.out.println("You go to the store, and buy some more,");
-                System.out.println("99 cans of Big Red on the wall");
+                System.out.println("99 " + word + phrase + period);
             } else {
-                System.out.println(i + " cans of Big Red on the Wall.");
-                System.out.println(i + " cans of Big Red on the Wall,");
-                System.out.println(i + " cans of Big Red,");
-                System.out.println("Take one down, pass it around, ");
+                System.out.println(i + word + phrase + period);
+                System.out.println(i + word + phrase + comma);
+                System.out.println(i + word + shortPhrase + comma);
+                System.out.println(chorusEnd);
             }
         }
     }
