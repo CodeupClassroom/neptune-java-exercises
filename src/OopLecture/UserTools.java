@@ -2,8 +2,15 @@ package OopLecture;
 
 import java.util.Scanner;
 
+// We are using this class to practice static fields.
+// Static fields are defined with the static keyword, and are shared by all instances of the class,
+// meaning that static properties should not be anything that is supposed to be unique to instances of the class.
+
 public class UserTools {
     public static Scanner scanner = new Scanner(System.in);
+
+    // each static method we have expects to take in an instance of the User class
+    // that way, we can access that particular user's credentials.
 
     public static void logIn(User u){
         System.out.println("Please enter your password: ");
@@ -15,6 +22,7 @@ public class UserTools {
             System.out.println("You have successfully logged in!");
         } else {
             System.out.println("That password is incorrect.");
+            logIn(u);
         }
     }
 
@@ -48,16 +56,32 @@ public class UserTools {
         }
     }
 
-    public static void main(String[] args) {
-        User testUser = new User();
-        testUser.id = 1;
-        testUser.username = "jayman";
-        // if password was public
-//        testUser.password = "password";
-        // if password is private
-        testUser.setPassword("password");
-        testUser.email = "jayman@email.com";
-        logIn(testUser);
+    public static void changeUsername(User u) {
+        if(!u.isLoggedIn()) {
+            System.out.println("Sorry, you are currently logged out. Please log in.");
+            logIn(u);
+        } else {
+            System.out.println("Please enter a new username: ");
+            String newUsername = scanner.nextLine();
+            u.setUsername(newUsername);
+            System.out.println("Your new username is: " + newUsername);
+        }
+
+    }
+
+    // Only using the below main method to demonstrate.
+    // At the end of the day, we are running our methods in UserManager.java
+
+//    public static void main(String[] args) {
+//        User testUser = new User();
+//        testUser.id = 1;
+//        testUser.username = "jayman";
+//        // if password was public
+////        testUser.password = "password";
+//        // if password is private
+//        testUser.setPassword("password");
+//        testUser.email = "jayman@email.com";
+//        logIn(testUser);
 
 //        User user2 = new User("codeup-dude", "gocodeup", "codeup@email.com");
 //
@@ -69,7 +93,7 @@ public class UserTools {
 //
 //        System.out.println(user2.getPassword());
 
-        changePassword(testUser);
+//        changePassword(testUser);
 
-    }
+//    }
 }
