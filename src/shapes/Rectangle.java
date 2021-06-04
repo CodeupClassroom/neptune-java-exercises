@@ -21,6 +21,10 @@ public class Rectangle {
         this.width = width;
     }
 
+    public Rectangle(){
+
+    }
+
     public Rectangle(double length, double width){
         this.setLength(length);
         this.setWidth(width);
