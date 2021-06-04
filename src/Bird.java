@@ -12,7 +12,9 @@ public class Bird {
     }
 
     // what kind of bird?
-    private String name;
+    // the protected access modifier is like private, but not just for the class this instance variable is in, also for all its subclasses. Only the class it's in or subclasses of the class it's in can access this variable.
+//    private String name;
+      protected  String name;
 
     public String getName() {
         return name;
@@ -32,15 +34,20 @@ public class Bird {
         System.out.println("Flap flap");
     }
 
-
-    public Bird(String nameOfThisBird, boolean itCanFly){
-        this.name = nameOfThisBird;
-        this.canFly = itCanFly;
-    }
+//    public void move(String Location, double velocity){
+//        //code here
+//    }
+    // in our subclass, if we do super.move(), it will access move()
+    // if we do super.move("forest", 12);
 
     public Bird(){
         System.out.println("A Bird Just Got Created");
         this.canFly = true;
         this.name = "Parrot";
+    }
+
+    public Bird(String nameOfThisBird, boolean itCanFly){
+        this.name = nameOfThisBird;
+        this.canFly = itCanFly;
     }
 }

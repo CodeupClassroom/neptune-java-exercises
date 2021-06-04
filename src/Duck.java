@@ -13,4 +13,11 @@ public class Duck extends Bird {
         super.makeNoise();
         System.out.println("Quack Quack!");
     }
+
+    public void setName(String duckName){
+        // as long as you have protected or public access you can do this:
+//        super.name = duckName;
+        // but this is more secure:
+        super.setName(duckName);
+    }
 }
