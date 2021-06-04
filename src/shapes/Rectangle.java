@@ -29,13 +29,12 @@ public class Rectangle {
     public double getArea(){
 //        double area = this.getLength() * this.getWidth();
 //        return area;
-        return this.getLength() * this.getLength();
+        return this.getLength() * this.getWidth();
     }
 
     public double getPerimeter(){
 //        double perimeter = (2 * this.getLength() * (2 * this.getWidth()));
 //        return perimeter;
-        return (2 * this.getLength() * (2 * this.getWidth()));
+        return (2 * this.getLength() + (2 * this.getWidth()));
     }
-
 }
