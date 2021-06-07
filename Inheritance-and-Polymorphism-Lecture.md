@@ -167,6 +167,8 @@ The super keyword says "go to the superclass version, run that code first, then 
 
 Some things to keep in mind about overriding. You have to fulfill the protocol. The arguments must be the same,a nd return types must be compatible. Otherwise you are overloading, not overriding. And the method cannot be less accessible. You can't override a public method and make it private, that will generate a runtime error.
 
+When you overload, on the other hand, the return types can be different; and the argument list MUST be different. If you only change the return type and not the argument list, the compiler will think you are overriding and won't allow it. When you overload, you can change access levels from less to more or more to less restrictive.
+
 ## The is-a and has-a tests
 
 Should one thing extend another? Use the is-a test.
@@ -180,8 +182,6 @@ We could say, a Honda Civic is a car. A Ford F-150 is a truck. A programmer is a
 But let's say we want our birds to have nests. So we create a Nest class. It seems like nest might extend bird, right? Wrong. Can you say a nest is-a bird? No. 
 
 Nest passes a different test for bird. A bird has-a nest. Therefore nest might be a separate class from bird. A bird might have a nest in it as an instance variable. So Bird would have a reference to Nest. But we would not make Nest extend Bird.
-
-When you overload, on the other hand, the return types can be different; and the argument list MUST be different. If you only change the return type and not the argument list, the compiler will think you are overriding and won't allow it. When you overload, you can change access levels from less to more or more to less restrictive.
 
 ## Polymorphism
 
