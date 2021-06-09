@@ -9,6 +9,8 @@ public class InputTest {
 //        System.out.println(in.yesNo());
 //        System.out.println(in.getDouble());
 //        System.out.println(in.getDouble(1, 2));
+        int userInput = in.getInt("Enter an integer: ");
+        System.out.println("User input: " + userInput);
 
     }
 }

@@ -11,6 +11,5 @@ public class FileIOLecture {
         Path path = Paths.get("src", "FileIOLecture.java");
         System.out.println(path);
         System.out.println(path.toAbsolutePath());
-
     }
 }

@@ -37,9 +37,21 @@ public class Input {
     }
     
     // TODO: **BONUS**
-    public int getInt(String prompt) {
-        System.out.println(prompt);
-        return this.scanner.nextInt();
+//    public int getInt(String prompt) {
+//        System.out.println(prompt);
+//        return this.scanner.nextInt();
+//    }
+
+    // refactor getInt method to use try-catch
+    public int getInt(String prompt){
+        int number;
+        try {
+            number = Integer.valueOf(getString(prompt));
+            return number;
+        } catch (NumberFormatException nfe){
+            System.out.println("Wrong input, try again: ");
+            return getInt(prompt);
+        }
     }
 
     public int getInt(int min, int max) {
