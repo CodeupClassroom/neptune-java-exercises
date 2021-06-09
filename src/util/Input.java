@@ -35,7 +35,7 @@ public class Input {
     public int getInt() {
         return this.scanner.nextInt();
     }
-
+    
     // TODO: **BONUS**
     public int getInt(String prompt) {
         System.out.println(prompt);
